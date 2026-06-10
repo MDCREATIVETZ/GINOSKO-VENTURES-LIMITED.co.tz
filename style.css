@@ -432,7 +432,7 @@ header {
 .bento-item:nth-child(2){
     background-image:
     linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)),
-    url(https://pin.it/28YZMMxvS);
+    url('asset/evet.jpg');
 }
 .bento-item:nth-child(3){
     background-image:
@@ -980,4 +980,14 @@ footer {
     background:var(--navy);
     border-radius:20px;
     transition:.3s;
+}.hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translate(7px,6px);
+}
+
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translate(7px,-6px);
 }

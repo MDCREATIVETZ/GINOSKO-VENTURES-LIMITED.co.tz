@@ -17,12 +17,61 @@
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-    line-height: 1.8;
-    color: var(--dark);
-    background-color: var(--white);
-    overflow-x: hidden;
+body{
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    font-weight:400;
+    line-height:1.7;
+    letter-spacing:0;
+    color:var(--dark);
+    background:var(--white);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+h1,h2,h3,h4{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:-0.5px;
+    line-height:1.15;
+}
+
+.hero h1{
+    font-size:clamp(3rem,6vw,5rem);
+    font-weight:800;
+    letter-spacing:-2px;
+}
+
+.section-header h2{
+    font-size:clamp(2rem,4vw,3rem);
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.card h3,
+.team-content h3,
+.tl-content h3{
+    font-size:1.35rem;
+    font-weight:700;
+    letter-spacing:-0.3px;
+}
+
+.nav-links a{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-weight:600;
+    letter-spacing:0;
+}
+
+.hero-p,
+.section-subtitle,
+.card p,
+.team-content p,
+.tl-content p,
+.testimonial-card p{
+    font-size:1rem;
+    line-height:1.8;
+    font-weight:400;
 }
 
 .container {
@@ -375,10 +424,26 @@ header {
 }
 
 /* Ginuwine Premium Static Design Placeholders (You can replace with custom images later) */
-.bento-item:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600'); }
-.bento-item:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=800'); }
-.bento-item:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600'); }
-.bento-item:nth-child(4) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600'); }
+.bento-item:nth-child(1){
+    background-image:
+    linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)),
+    url(https://rowlandsafaris.com/wp-content/uploads/2026/04/4.jpeg);
+}
+.bento-item:nth-child(2){
+    background-image:
+    linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)),
+    url('asset/event management.jpeg');
+}
+.bento-item:nth-child(3){
+    background-image:
+    linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)),
+    url(https://www.instagram.com/reel/DW8d5K8jUfD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA);
+}
+.bento-item:nth-child(4){
+    background-image:
+    linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)),
+    url('asset/social media.jpeg');
+}
 
 .bento-item.tall { grid-row: span 2; }
 .bento-item.wide { grid-column: span 2; }

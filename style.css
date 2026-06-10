@@ -432,17 +432,12 @@ header {
 .bento-item:nth-child(2){
     background-image:
     linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)),
-    url('asset/event management.jpeg');
+    url(https://pin.it/28YZMMxvS);
 }
 .bento-item:nth-child(3){
     background-image:
     linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)),
-    url(https://www.instagram.com/reel/DW8d5K8jUfD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA);
-}
-.bento-item:nth-child(4){
-    background-image:
-    linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.6)),
-    url('asset/social media.jpeg');
+    url('asset/desig.jpeg');
 }
 
 .bento-item.tall { grid-row: span 2; }
@@ -763,12 +758,14 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.03);
 }
 
-.footer-box-layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.footer-box-layout{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:10px;
 }
-
 .footer-tagline {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
@@ -834,13 +831,56 @@ footer {
     }
 }
 
-@media(max-width: 768px) {
-    h2 { font-size: 1.8rem; }
-    .nav-links, header .btn { display: none; }
-    .hero h1 { font-size: 2.2rem; }
-    .stats, .mission-vision, .testimonials-grid { grid-template-columns: 1fr; }
-    .contact-form { padding: 30px; }
-    .footer-box-layout { flex-direction: column; gap: 15px; text-align: center; }
+@media(max-width:768px){
+
+    .hamburger{
+        display:flex;
+    }
+
+    header .btn{
+        display:none;
+    }
+
+    .nav-links{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:280px;
+        height:100vh;
+        background:#fff;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:30px;
+        box-shadow:-10px 0 30px rgba(0,0,0,.08);
+        transition:.4s ease;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .nav-links a{
+        font-size:1.1rem;
+    }
+
+    h2{
+        font-size:1.8rem;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .stats,
+    .mission-vision,
+    .testimonials-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-form{
+        padding:30px;
+    }
 }
 
 /* TEAM SECTION */
@@ -926,4 +966,18 @@ footer {
 
 .team-card:hover::before{
     left:100%;
+}.hamburger{
+    display:none;
+    flex-direction:column;
+    gap:6px;
+    cursor:pointer;
+    z-index:2000;
+}
+
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:var(--navy);
+    border-radius:20px;
+    transition:.3s;
 }

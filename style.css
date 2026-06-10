@@ -141,14 +141,14 @@ h2 {
 }
 
 .btn-premium{
-    background:#C9A227;
+    background:lch(57.01% 67.53 56);
     color:#fff;
 }
 
 .btn-premium:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px var(--orange-glow);
-    background: #B38F1D;
+    background: #b35721;
 }
 
 .btn-large {

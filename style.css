@@ -32,7 +32,15 @@ body {
 }
 
 section {
-    padding: 120px 0;
+    padding: 90px 0;
+} 
+
+.testimonials{
+    padding-bottom:60px;
+}
+
+.faq-section{
+    padding-top:60px;
 }
 
 /* SECTION TITLES & TYPOGRAPHY */
@@ -43,7 +51,7 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     line-height: 1.2;
 }
 
@@ -83,16 +91,15 @@ h2 {
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.btn-premium {
-    background: var(--orange);
-    color: var(--white);
-    box-shadow: 0 4px 14px var(--orange-glow);
+.btn-premium{
+    background:#C9A227;
+    color:#fff;
 }
 
 .btn-premium:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px var(--orange-glow);
-    background: #e0761b;
+    background: #B38F1D;
 }
 
 .btn-large {
@@ -125,10 +132,16 @@ header {
     padding: 20px 0;
 }
 
-.logo-img {
-    height: 45px;
-    width: auto;
-    object-fit: contain;
+.logo-img{
+    height:80px;
+    width:auto;
+    display:block;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    min-width:180px;
 }
 
 .nav-links {
@@ -757,9 +770,9 @@ footer {
 }
 
 @media(max-width: 768px) {
-    h2 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
     .nav-links, header .btn { display: none; }
-    .hero h1 { font-size: 2.5rem; }
+    .hero h1 { font-size: 2.2rem; }
     .stats, .mission-vision, .testimonials-grid { grid-template-columns: 1fr; }
     .contact-form { padding: 30px; }
     .footer-box-layout { flex-direction: column; gap: 15px; text-align: center; }

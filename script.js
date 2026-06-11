@@ -1,72 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("GINOSKO Premium Engine Initiated.");
+// SCROLL REVEAL
+const reveals = document.querySelectorAll(".reveal");
 
-    // Reveal Animation
-    const revealElements = document.querySelectorAll(".reveal");
+function revealOnScroll() {
+    reveals.forEach(item => {
+        const windowHeight = window.innerHeight;
+        const elementTop = item.getBoundingClientRect().top;
+        const revealPoint = 120;
 
-    const revealOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.12
+        if (elementTop < windowHeight - revealPoint) {
+            item.classList.add("active");
+        }
     });
+}
 
-    revealElements.forEach(element => {
-        revealOnScroll.observe(element);
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+// FAQ ACCORDION
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+        item.classList.toggle("active");
     });
+});
 
-    // FAQ Accordion
-    const faqQuestions = document.querySelectorAll(".faq-question");
-
-    faqQuestions.forEach(question => {
-        question.addEventListener("click", function () {
-
-            const currentItem = this.parentElement;
-
-            document.querySelectorAll(".faq-item").forEach(item => {
-                if (item !== currentItem) {
-                    item.classList.remove("active");
-                }
-            });
-
-            currentItem.classList.toggle("active");
-        });
-    });
-
-    // Team Cards Animation
-    const teamCards = document.querySelectorAll(".team-card");
-
-    teamCards.forEach((card, index) => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(50px)";
-
-        setTimeout(() => {
-            card.style.transition = "all 0.8s ease";
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        }, 300 * index);
-    });
-
-    // Mobile Menu
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    if (menuToggle) {
-        menuToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        });
-    }
-
-});const hamburger = document.querySelector(".hamburger");
+// MOBILE HAMBURGER
+const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
+if (hamburger) {
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+    });
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    });
 });

@@ -797,51 +797,188 @@ footer{
     }
 }
 
-/* RESPONSIVE DESIGN FOR MOBILE (Chini ya 768px) */
+/* --- MANAGEMENT YA BUTTONS (DESKTOP VS MOBILE) --- */
+.mobile-only-btn {
+    display: none;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 15px;
+    box-sizing: border-box;
+}
+/* ==========================================================================
+   TEAM SECTION - PREMIUM GRID LAYOUT
+   ========================================================================== */
+   .team-section {
+    padding: 80px 0;
+    background-color: #ffffff; /* Background nyeupe safi ili itofautiane na section nyingine */
+}
+
+/* Mfumo wa Grid unaoweka kadi 3 sambamba kwenye Desktop */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Nafasi kati ya kadi na kadi */
+    margin-top: 40px;
+}
+
+/* Muundo wa Kadi ya Mwanafamilia wa Timu */
+.team-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 29, 58, 0.05); /* Kivuli laini cha kisasa */
+    border: 1px solid rgba(15, 29, 58, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efekti ya kadi ikigusa (Hover) */
+.team-card:hover {
+    transform: translateY(-10px); /* Kadi inanyanyuka juu kidogo */
+    box-shadow: 0 20px 40px rgba(15, 29, 58, 0.1);
+    border-color: rgba(241, 90, 36, 0.2); /* Inaleta wekundu wa mbali wa mboni ya brand */
+}
+
+/* Sehemu inayoshikilia Picha */
+.team-image {
+    width: 100%;
+    height: 400px; /* Urefu uliotulia wa picha */
+    overflow: hidden;
+    position: relative;
+    background-color: #f8fafc;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Inafanya picha ijijaze vizuri bila kukatika sura vibaya */
+    object-position: center;
+    transition: scale 0.5s ease;
+}
+
+.team-card:hover .team-image img {
+    scale: 1.03; /* Picha inajisogeza mbele kidogo kwa mbali kadi ikiguswa */
+}
+
+/* Sehemu ya Maandishi ndani ya Kadi */
+.team-content {
+    padding: 25px;
+    text-align: left; /* Inakaa kushoto safi kuendana na muundo wa Kitaa Digital */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-content h3 {
+    font-size: 1.3rem;
+    color: #0f1d3a; /* Rangi ya Navy */
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+/* Cheo cha Mtu */
+.team-content span {
+    display: block;
+    font-size: 0.9rem;
+    color: #f15a24; /* Rangi yako ya Orange/Machungwa ya brand */
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Inaleta herufi kubwa kwenye vyeo */
+    letter-spacing: 0.5px;
+}
+
+/* Maelezo ya kazi ya mtu */
+.team-content p {
+    font-size: 0.95rem;
+    color: #64748b; /* Rangi ya kijivu iliyotulia isiyoumiza macho */
+    line-height: 1.6;
+    margin: 0;
+}
+/* --- RESPONSIVE DESIGN KWA AJILI YA SIMU) --- */
 @media(max-width: 768px) {
     h2 { font-size: 2rem; }
     .hero h1 { font-size: 2.5rem; }
     .stats, .mission-vision, .testimonials-grid { grid-template-columns: 1fr; }
     .contact-form { padding: 30px; }
     .footer-box-layout { flex-direction: column; gap: 15px; text-align: center; }
-    header .btn { display: none; }
-
-    .hamburger {
-        display: block;
-    }
     
-    /* Menu ya simu inabadilika kuwa dropdown safi ya glossy */
+    /* Ficha button ya desktop na onyesha hamburger */
+    .desktop-only-btn { display: none !important; }
+    .hamburger { display: block; }
+
     .nav-links {
         position: absolute;
-        top: 80px;
+        top: 100%; 
         left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        flex-direction: column;
-        padding: 30px 20px;
-        display: none;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        gap: 20px;
-        text-align: center;
-        z-index: 999;
-        border-radius: 0; 
-        border: none;
+        width: 100% !important;
+        background: #ffffff !important; 
+        flex-direction: column !important;
+        align-items: flex-start !important; /* Inalazimisha li-tags zianzie kushoto */
+        padding: 15px 0 !important; 
+        display: none; 
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        gap: 0 !important; 
+        border-radius: 0 !important; 
+        border: none !important;
         border-top: 1px solid rgba(15, 29, 58, 0.05);
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-sizing: border-box;
     }
     
+    .nav-links li {
+        width: 100% !important;
+        text-align: left !important; /* Inalazimisha text ikae kushoto */
+        display: block !important;
+    }
+    
+    /* MAANDISHI YAKAE KUSHOTO (LEFT) NA PADDING */
     .nav-links a {
-        width: 100%;
-        justify-content: center;
-        border-radius: 8px;
+        display: block !important;
+        width: 100% !important;
+        text-align: left !important; /* Hapa ndio muujiza wa kwenda Left ulipo */
+        padding: 16px 24px !important; /* Nafasi nzuri kutoka ukuta wa kushoto kama picha yako */
+        font-size: 1.05rem !important;
+        color: #1e293b !important; /* Rangi ya herufi iwe dark safi */
+        border-radius: 0 !important;
+        font-weight: 500;
+        box-sizing: border-box;
     }
     
-    .nav-links.active {
-        display: flex;
+    /* Kipengele kilichochaguliwa (Active) kikae kishababi */
+    .nav-links li.active a {
+        background: #fdf6f0 !important; /* Rangi ile ya cream/soft orange kwa mbali */
+        color: #f15a24 !important; /* Maandishi yawe na rangi ya brand yako ya machungwa */
+        font-weight: 600;
     }
-}
 
-body.menu-open {
-    overflow: hidden;
+    .nav-links a:hover {
+        background: #f8fafc !important;
+        padding-left: 30px !important; /* Ka-animation kadogo kakisogea mbele kidogo */
+        transition: all 0.3s ease;
+    }
+    
+    /* Button ya chini kabisa kuijaza upande hadi upande */
+    .mobile-only-btn {
+        display: block !important;
+    }
+
+    .mobile-only-btn a {
+        display: flex !important;
+        justify-content: center !important; /* Maandishi ya button yenyewe yabaki katikati ya button */
+        align-items: center;
+        border-radius: 8px !important;
+        padding: 14px !important;
+        background: #0f1d3a !important; /* Dark Blue ya Kitaa Digital */
+        color: #ffffff !important;
+        margin: 10px 20px 20px 20px !important; /* Inaleta uwiano wa pembeni */
+        width: calc(100% - 40px) !important;
+        font-weight: 600;
+    }
+    
+    /* Class ya JS itakayofungua menu */
+    .nav-links.active {
+        display: flex !important;
+    }
 }

@@ -400,10 +400,9 @@ header {
     transition: all 0.5s ease;
 }
 
-.bento-item:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600'); }
-.bento-item:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=800'); }
-.bento-item:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600'); }
-.bento-item:nth-child(4) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600'); }
+.bento-item:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://rowlandsafaris.com/wp-content/uploads/2026/04/4.jpeg'); }
+.bento-item:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('asset/evet.jpg'); }
+.bento-item:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('asset/desig.jpeg'); }
 
 .bento-item.tall { grid-row: span 2; }
 .bento-item.wide { grid-column: span 2; }
@@ -715,23 +714,28 @@ header {
 }
 
 /* FOOTER */
-footer {
-    background: #0b1220;
-    color: #94a3b8;
-    padding: 50px 0;
-    border-top: 1px solid rgba(255,255,255,0.03);
+footer{
+    background:#0b1220;
+    color:#94a3b8;
+    padding:50px 0;
+    border-top:1px solid rgba(255,255,255,0.03);
+    text-align:center;
 }
-
-.footer-box-layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.footer-box-layout{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:10px;
 }
 
 .footer-tagline {
     font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    color: var(--white);
+    font-size:1.2rem;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:5px;
 }
 
 /* FLOATING WHATSAPP */
